@@ -79,7 +79,7 @@ const Navbar = ({}) => {
           <ModeToggle className=""></ModeToggle>
           <Button
             href="/invoice"
-            className="dark:bg-neutral-800 dark:text-neutral-300 hover:dark:text-neutral-100 border dark:border-neutral-50/20 border-neutral-950/20"
+            className="dark:bg-neutral-800 max-sm:hidden dark:text-neutral-300 hover:dark:text-neutral-100 border dark:border-neutral-50/20 border-neutral-950/20"
           >
             Generate now
           </Button>
