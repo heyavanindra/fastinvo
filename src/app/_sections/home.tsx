@@ -3,7 +3,7 @@ import Button from "@/components/ui/button";
 
 const Hero = ({}) => {
   return (
-    <Container>
+    <Container className="">
       <div className=" text-neutral-900 pt-50 pb-24">
         <div
           className="
