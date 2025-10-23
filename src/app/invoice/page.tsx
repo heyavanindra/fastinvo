@@ -1,5 +1,6 @@
 
-const Invoice= () => {
+
+const InvoiceCreate = ({  }) => {
   return (
     <div>
       hi
@@ -7,4 +8,4 @@ const Invoice= () => {
   );
 };
 
-export default Invoice;
+export default InvoiceCreate;
