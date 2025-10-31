@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { useTheme } from "next-themes";
 import { useState } from "react";
 
-const ModeToggle = ({ className }: { className: string }) => {
+const ModeToggle = ({ className }: { className?: string }) => {
   const [isOn, setIsOn] = useState(false);
   const { theme, setTheme } = useTheme();
   const toggleHandler = () => {
@@ -20,7 +20,7 @@ const ModeToggle = ({ className }: { className: string }) => {
   return (
     <div
       onClick={toggleHandler}
-      className={`flex-start items-center flex h-5 py-3 w-12 rounded-[50px] bg-zinc-100 px-[5px] shadow-inner hover:cursor-pointer dark:bg-zinc-700 ${theme === "dark" && "place-content-end"}`}
+      className={`flex-start items-center flex h-5 py-3 w-12 rounded-[50px] bg-zinc-100 px-[5px] shadow-inner hover:cursor-pointer dark:bg-zinc-700 ${className} ${theme === "dark" && "place-content-end"}`}
     >
       <motion.div
         className="flex size-fit items-center justify-center rounded-full "

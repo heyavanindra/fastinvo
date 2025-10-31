@@ -1,7 +1,14 @@
 import { z } from "zod";
 
 export const invoiceSchema = z.object({
+  componyName:z.string(),
+  website:z.string(),
+  logo:z.file().optional(),
+  signature:z.file().optional(),
   invoiceNumber: z.number(),
+  subject:z.string(),
+  invoiceDate:z.date(),
+  dueDate:z.date(),
   email: z.email(),
   sender: z.object({
     name: z.string(),
@@ -21,7 +28,8 @@ export const invoiceSchema = z.object({
   }),
   items: z.array(
     z.object({
-      item: z.string(),
+      name:z.string(),
+      desc:z.string(),
       quantity: z.number(),
       amount: z.number(),
       sum: z.number(),

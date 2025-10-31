@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-
+import NextTopLoader from "nextjs-toploader";
+import TopLoader from "@/components/ui/top-loader";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -34,6 +35,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <TopLoader></TopLoader>
+          
           {children}
         </ThemeProvider>
       </body>
