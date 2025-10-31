@@ -26,8 +26,8 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
         <AccordionItem value="item-1">
           <AccordionTrigger>Files</AccordionTrigger>
           <AccordionContent className="flex justify-around items-center">
-            <FileUpload onChange={handleFileUpload} />
-            <FileUpload onChange={handleFileUpload} />
+            {/*<FileUpload onChange={handleFileUpload} />
+            <FileUpload onChange={handleFileUpload} />*/}
           </AccordionContent>
         </AccordionItem>
 
