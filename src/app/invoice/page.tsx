@@ -6,8 +6,15 @@ import { invoiceSchema } from "@/lib/schema";
 import { InvoiceTypes } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import InvoicePreview from "../_sections/invoice-preview";
 import ModeToggle from "@/components/ui/mode-toggle";
+
+import dynamic from "next/dynamic";
+
+const InvoicePreview = dynamic(() => import("../_sections/invoice-preview"), {
+  ssr: false,
+});
+
+
 
 const InvoiceCreate = ({}) => {
   const [showPreview, setShowPreview] = useState(false);

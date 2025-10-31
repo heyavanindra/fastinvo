@@ -9,8 +9,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./ui/accordian";
-import React from "react";
-import { FileUpload } from "./ui/file-upload";
 
 const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
   const { control, setValue } = form;
