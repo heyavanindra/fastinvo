@@ -1,6 +1,7 @@
 import Container from "@/components/container";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
+import FooterBranding from "./footer-logo";
 const Footer = ({}) => {
   const marqueeItems = [
     {
@@ -56,13 +57,14 @@ const Footer = ({}) => {
 
   return (
     <Container className={"px-4"}>
-      <div className="w-full h-screen pt-32">
+      <div className="w-full pt-32">
         <div className="py-8 px-4">
-          <h1 className="text-4xl font-semibold text-neutral-800">
-            People love us
+          <h1 className="text-4xl font-semibold text-neutral-800 dark:text-neutral-400">
+            What user say about us -
           </h1>
         </div>
-        <Marquee className="mask-r-from-90% flex mt-12 mask-l-from-90%">
+
+        <Marquee className="mask-r-from-90% mask-l-from-90%">
           {marqueeItems.map((items, idx) => (
             <MarqueeCard
               key={`${items.src}` + idx}
@@ -72,6 +74,9 @@ const Footer = ({}) => {
             ></MarqueeCard>
           ))}
         </Marquee>
+        <div className="mt-32">
+          <FooterBranding></FooterBranding>
+        </div>
       </div>
     </Container>
   );
@@ -87,7 +92,7 @@ const MarqueeCard = ({
   name: string;
 }) => {
   return (
-    <div className="flex flex-col w-fit gap-y-4 mx-6">
+    <div className="flex flex-col w-fit mx-6">
       <Image
         className="size-24 rounded-full object-cover"
         src={src}
@@ -95,8 +100,8 @@ const MarqueeCard = ({
         width={300}
         height={300}
       ></Image>
-      <h2>{name}</h2>
-      <p className={"w-[200px] text-sm "}>{text}</p>
+      <h2 className={"text-md font-semibold mt-2"}>{name}</h2>
+      <p className={"w-[200px] text-sm mt-2"}>{text}</p>
     </div>
   );
 };

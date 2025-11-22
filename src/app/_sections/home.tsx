@@ -17,7 +17,7 @@ const Hero = ({}) => {
           <h1 className="text-3xl md:text-6xl text-center max-sm:mt-6 max-w-4xl font-bold text-neutral-900 dark:text-neutral-200">
             Generate Invoices Instantly <br /> No Sign-Up, No Hassle.
           </h1>
-          <h4 className="max-w-lg font-semibold text-sm md:text-lg max-sm:mt-3 text-center px-2 text-neutral-900 tracking-tight leading-tight dark:text-neutral-500">
+          <h4 className="max-w-lg font-semibold text-sm md:text-lg max-sm:mt-3 text-center px-2 text-neutral-600 tracking-tight leading-tight dark:text-neutral-500">
             We empower developers and technical teams to create, simulate, and
             manage AI-driven workflows visually
           </h4>
