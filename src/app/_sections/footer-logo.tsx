@@ -1,10 +1,16 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import {
+  useState,
+  useRef,
+  useEffect,
+  MouseEvent,
+  MouseEventHandler,
+} from "react";
 import { motion, useSpring, useMotionValue } from "motion/react";
 import { useTheme } from "next-themes";
 
 export default function Footer() {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const [isHovered, setIsHovered] = useState(false);
   const { theme } = useTheme();
   const rotation = useMotionValue(0);
@@ -40,8 +46,8 @@ export default function Footer() {
     return () => clearInterval(interval);
   }, [isHovered]);
 
-  const handleMouseMove = (e) => {
-    if (!containerRef.current) return;
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    if (containerRef.current === null) return;
     const rect = containerRef.current.getBoundingClientRect();
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
