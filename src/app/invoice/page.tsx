@@ -19,6 +19,7 @@ import LogoSvg from "@/components/ui/logo-svg";
 import { useIsClient } from "usehooks-ts";
 import SideBarDesktop from "@/components/sidebar-desktop";
 import SidebarMobile from "@/components/sidebar-mobile";
+import TopBar from "@/components/top-bar";
 const InvoicePreview = dynamic(() => import("../_sections/invoice-preview"), {
   ssr: false,
 });
@@ -88,66 +89,11 @@ const InvoiceCreate = ({}) => {
             className="h-full rounded-xl sm:rounded-2xl lg:rounded-3xl bg-white/80 dark:bg-neutral-900/80 backdrop-blur-xl border border-neutral-200 dark:border-neutral-800 shadow-2xl overflow-hidden flex flex-col"
           >
             {/* Top Bar */}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="border-b border-neutral-200 dark:border-neutral-800 bg-white/50 dark:bg-neutral-800/50 backdrop-blur-sm shrink-0"
-            >
-              <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-                <div className="flex items-center gap-3">
-                  {/* Mobile Menu Button */}
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setSidebarOpen(true)}
-                    className="lg:hidden p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-                  >
-                    <svg
-                      className="w-6 h-6 text-neutral-700 dark:text-neutral-300"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4 6h16M4 12h16M4 18h16"
-                      />
-                    </svg>
-                  </motion.button>
-
-                  <div>
-                    <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-neutral-900 dark:text-neutral-100">
-                      Create Invoice
-                    </h1>
-                    <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 hidden sm:block">
-                      Design and preview your invoice
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-2 sm:gap-3">
-                  {/* Mobile Preview Toggle */}
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setShowPreview(!showPreview)}
-                    className="lg:hidden px-3 sm:px-4 py-2 rounded-lg bg-neutral-800 dark:bg-neutral-700 text-white text-sm font-medium shadow-lg hover:shadow-xl transition-shadow"
-                  >
-                    {showPreview ? "Edit" : "Preview"}
-                  </motion.button>
-
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <ModeToggle />
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
+            <TopBar
+              form={form}
+              setShowPreview={setShowPreview}
+              showPreview={showPreview}
+            ></TopBar>
 
             {/* Main Content Area */}
             <div className="flex-1 overflow-hidden">
