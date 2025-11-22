@@ -68,7 +68,7 @@ export default function Footer() {
   return (
     <div
       className={`p-8 flex flex-col items-center justify-center min-h-[200px] transition-colors duration-300 ${
-        theme === "dark" ? "bg-neutral-950" : "bg-neutral-50"
+        theme === "dark" ? "bg-neutral-950" : "bg-white"
       }`}
     >
       <div
