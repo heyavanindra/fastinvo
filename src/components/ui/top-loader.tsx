@@ -6,12 +6,12 @@ const TopLoader = () => {
   const { theme } = useTheme();
   return (
     <NextTopLoader
-      height={1}
+      height={4}
       showSpinner={false}
       color={
         theme === "dark"
           ? "var(--color-neutral-400)"
-          : "var(--color-neutral-800)"
+          : "var(--color-neutral-900)"
       }
     ></NextTopLoader>
   );
