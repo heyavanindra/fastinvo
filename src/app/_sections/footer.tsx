@@ -12,7 +12,7 @@ const Footer = ({}) => {
         "Smart & effortless! I can generate invoices in seconds. The interface is super clean — no clutter, no confusion.",
     },
     {
-      src: "https://images.unsplash.com/photo-1603415526815-4c1ce0b14f12?w=800",
+      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800",
       name: "Rahul Sharma",
       title: "Startup Founder",
       review:
