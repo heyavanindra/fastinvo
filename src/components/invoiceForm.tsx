@@ -170,9 +170,9 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
 
         {/* Company Details Section */}
         <AccordionItem value="item-2">
-          <AccordionTrigger>Company Details</AccordionTrigger>
+          <AccordionTrigger className="font-semibold text-xl">Company Details</AccordionTrigger>
           <AccordionContent className="flex flex-col gap-4">
-            <div className="flex justify-around items-center gap-4">
+            <div className="flex px-2 py-4 items-center gap-4">
               <Controller
                 name="componyName"
                 control={control}
@@ -224,9 +224,9 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
 
         {/* Invoice Information Section */}
         <AccordionItem value="item-3">
-          <AccordionTrigger>Invoice Information</AccordionTrigger>
+          <AccordionTrigger className="font-semibold text-xl">Invoice Information</AccordionTrigger>
           <AccordionContent className="flex flex-col gap-4">
-            <div className="flex justify-around items-center gap-4">
+            <div className="flex px-2 py-4 items-center gap-4">
               <Controller
                 name="invoiceNumber"
                 control={control}
@@ -260,7 +260,7 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
                 )}
               />
             </div>
-            <div className="flex justify-around items-center gap-4">
+            <div className="flex px-2 items-center gap-x-4">
               <Controller
                 name="invoiceDate"
                 control={control}
@@ -303,9 +303,9 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
 
         {/* Sender Details Section */}
         <AccordionItem value="item-4">
-          <AccordionTrigger>Sender Details</AccordionTrigger>
+          <AccordionTrigger className="font-semibold text-xl">Sender Details</AccordionTrigger>
           <AccordionContent className="flex flex-col gap-4">
-            <div className="flex justify-around items-center gap-4">
+            <div className="flex px-2 py-4 items-center gap-4">
               <Controller
                 name="sender.name"
                 control={control}
@@ -352,7 +352,7 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
                 )}
               />
             </div>
-            <div className="flex justify-around items-center gap-4">
+            <div className="flex px-2 items-center gap-4">
               <Controller
                 name="sender.country"
                 control={control}
@@ -408,7 +408,7 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
 
         {/* Receiver Details Section */}
         <AccordionItem value="item-5">
-          <AccordionTrigger>Receiver Details</AccordionTrigger>
+          <AccordionTrigger className="font-semibold text-xl">Receiver Details</AccordionTrigger>
           <AccordionContent className="flex flex-col gap-4">
             <div className="flex justify-around items-center gap-4">
               <Controller
@@ -513,7 +513,7 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
 
         {/* Items Section - Now with Popup */}
         <AccordionItem value="item-6">
-          <AccordionTrigger>Items ({fields.length})</AccordionTrigger>
+          <AccordionTrigger className="font-semibold text-xl">Items ({fields.length})</AccordionTrigger>
           <AccordionContent className="flex flex-col gap-6">
             {fields.length === 0 ? (
               <div className="text-center py-8 text-gray-500">
@@ -578,7 +578,7 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
 
         {/* Payment Details Section */}
         <AccordionItem value="item-7">
-          <AccordionTrigger>Payment Details</AccordionTrigger>
+          <AccordionTrigger className="font-semibold text-xl">Payment Details</AccordionTrigger>
           <AccordionContent className="flex flex-col gap-4">
             <div className="flex justify-around items-center gap-4">
               <Controller

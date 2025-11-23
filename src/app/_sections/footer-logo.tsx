@@ -67,13 +67,13 @@ export default function Footer() {
 
   return (
     <div
-      className={`p-8 flex flex-col items-center justify-center min-h-[200px] transition-colors duration-300 ${
+      className={`p-8 mb-12 flex flex-col items-center justify-center min-h-[200px] transition-colors duration-300 ${
         theme === "dark" ? "bg-neutral-950" : "bg-white"
       }`}
     >
       <div
         ref={containerRef}
-        className="w-full max-w-4xl cursor-crosshair"
+        className="w-full max-w-4xl "
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}

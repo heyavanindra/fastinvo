@@ -79,25 +79,6 @@ const TopBar = ({ setShowPreview, showPreview, form }: TopBarProps) => {
         <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
           <div className="flex items-center gap-3">
             {/* Mobile Menu Button */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="lg:hidden p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-            >
-              <svg
-                className="w-6 h-6 text-neutral-700 dark:text-neutral-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </motion.button>
 
             <div>
               <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-neutral-900 dark:text-neutral-100">
@@ -115,14 +96,14 @@ const TopBar = ({ setShowPreview, showPreview, form }: TopBarProps) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setShowPreview(!showPreview)}
-              className="lg:hidden px-3 sm:px-4 py-2 rounded-lg bg-neutral-800 dark:bg-neutral-700 text-white text-sm font-medium shadow-lg hover:shadow-xl transition-shadow"
+              className="lg:hidden px-3  sm:px-2 py-1 rounded-md bg-neutral-200 text-neutral-900 dark:text-neutral-50 dark:border-neutral-200/20 dark:bg-neutral-700 border border-neutral-600/20 font-medium shadow-lg hover:shadow-xl transition-shadow"
             >
               {showPreview ? "Edit" : "Preview"}
             </motion.button>
             <div>
               <button
                 className={
-                  "bg-neutral-800 text-neutral-100 dark:text-neutral-900 dark:bg-neutral-100 px-2 py-2 rounded-md cursor-pointer font-semibold "
+                  "bg-neutral-800 text-neutral-100 dark:text-neutral-900 dark:bg-neutral-100   cursor-pointer  px-3  sm:px-2 py-1 rounded-md"
                 }
                 onClick={downloadPdf}
               >

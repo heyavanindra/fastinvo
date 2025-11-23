@@ -58,8 +58,8 @@ const Footer = ({}) => {
   return (
     <Container className={"px-4"}>
       <div className="w-full pt-32">
-        <div className="py-8 px-4">
-          <h1 className="text-4xl font-semibold text-neutral-800 dark:text-neutral-400">
+        <div className="sm:py-8 py-2 sm:px-4">
+          <h1 className="text-4xl max-sm:text-2xl font-semibold text-neutral-800 dark:text-neutral-400">
             What user say about us -
           </h1>
         </div>
@@ -74,7 +74,7 @@ const Footer = ({}) => {
             ></MarqueeCard>
           ))}
         </Marquee>
-        <div className="mt-32">
+        <div className="sm:mt-32 mt-6">
           <FooterBranding></FooterBranding>
         </div>
       </div>
