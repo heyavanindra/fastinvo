@@ -10,17 +10,17 @@ import {
   AccordionTrigger,
 } from "./ui/accordian";
 import { useState } from "react";
-import { X } from "lucide-react";
+import { Trash2, X } from "lucide-react";
 import InvoiceDatePicker from "./ui/invoice-form/date-picker";
 
 // Add Item Popup Component
-const AddItemPopup = ({ 
-  isOpen, 
-  onClose, 
-  onAdd 
-}: { 
-  isOpen: boolean; 
-  onClose: () => void; 
+const AddItemPopup = ({
+  isOpen,
+  onClose,
+  onAdd,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
   onAdd: (item: any) => void;
 }) => {
   const [formData, setFormData] = useState({
@@ -40,12 +40,12 @@ const AddItemPopup = ({
   const handleChange = (field: string, value: any) => {
     setFormData((prev) => {
       const updated = { ...prev, [field]: value };
-      
+
       // Auto-calculate sum if quantity or amount changes
       if (field === "quantity" || field === "amount") {
         updated.sum = updated.quantity * updated.amount;
       }
-      
+
       return updated;
     });
   };
@@ -95,7 +95,9 @@ const AddItemPopup = ({
               <input
                 type="number"
                 value={formData.quantity}
-                onChange={(e) => handleChange("quantity", Number(e.target.value) || 0)}
+                onChange={(e) =>
+                  handleChange("quantity", Number(e.target.value) || 0)
+                }
                 placeholder="Quantity"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
@@ -105,12 +107,13 @@ const AddItemPopup = ({
               <input
                 type="number"
                 value={formData.amount}
-                onChange={(e) => handleChange("amount", Number(e.target.value) || 0)}
+                onChange={(e) =>
+                  handleChange("amount", Number(e.target.value) || 0)
+                }
                 placeholder="Amount"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-           
           </div>
 
           <div className="flex gap-3 mt-4">
@@ -229,11 +232,13 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
                 control={control}
                 render={({ field }) => (
                   <div className="flex flex-col gap-1">
-                    <label className="text-sm font-medium">Invoice Number</label>
+                    <label className="text-sm font-medium">
+                      Invoice Number
+                    </label>
                     <InvoiceInput
                       type="text"
                       field={field}
-                      onChange={(e) => field.onChange((e.target.value) || 0)}
+                      onChange={(e) => field.onChange(e.target.value || 0)}
                       placeHolder="Invoice Number"
                     />
                   </div>
@@ -265,7 +270,9 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
                     <InvoiceDatePicker
                       field={field}
                       onChange={(e) => {
-                        const date = e.target.value ? new Date(e.target.value) : new Date();
+                        const date = e.target.value
+                          ? new Date(e.target.value)
+                          : new Date();
                         field.onChange(date);
                       }}
                     />
@@ -281,7 +288,9 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
                     <InvoiceDatePicker
                       field={field}
                       onChange={(e) => {
-                        const date = e.target.value ? new Date(e.target.value) : new Date();
+                        const date = e.target.value
+                          ? new Date(e.target.value)
+                          : new Date();
                         field.onChange(date);
                       }}
                     />
@@ -368,7 +377,9 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
                     <InvoiceInput
                       type="number"
                       field={field}
-                      onChange={(e) => field.onChange(Number(e.target.value) || 0)}
+                      onChange={(e) =>
+                        field.onChange(Number(e.target.value) || 0)
+                      }
                       placeHolder="Pincode"
                     />
                   </div>
@@ -383,7 +394,9 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
                     <InvoiceInput
                       type="tel"
                       field={field}
-                      onChange={(e) => field.onChange(Number(e.target.value) || 0)}
+                      onChange={(e) =>
+                        field.onChange(Number(e.target.value) || 0)
+                      }
                       placeHolder="Phone Number"
                     />
                   </div>
@@ -469,7 +482,9 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
                     <InvoiceInput
                       type="number"
                       field={field}
-                      onChange={(e) => field.onChange(Number(e.target.value) || 0)}
+                      onChange={(e) =>
+                        field.onChange(Number(e.target.value) || 0)
+                      }
                       placeHolder="Pincode"
                     />
                   </div>
@@ -484,7 +499,9 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
                     <InvoiceInput
                       type="tel"
                       field={field}
-                      onChange={(e) => field.onChange(Number(e.target.value) || 0)}
+                      onChange={(e) =>
+                        field.onChange(Number(e.target.value) || 0)
+                      }
                       placeHolder="Phone Number"
                     />
                   </div>
@@ -504,7 +521,10 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
               </div>
             ) : (
               fields.map((field, index) => (
-                <div key={field.id} className="border border-gray-200 rounded-lg p-4 relative">
+                <div
+                  key={field.id}
+                  className="border border-gray-200 rounded-lg p-4 relative"
+                >
                   <div className="flex justify-between items-center mb-4">
                     <h4 className="text-sm font-semibold">Item {index + 1}</h4>
                     <button
@@ -512,7 +532,7 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
                       onClick={() => remove(index)}
                       className="text-red-500 hover:text-red-700 text-sm font-medium"
                     >
-                      Remove
+                      <Trash2 className={"cursor-pointer"}></Trash2>
                     </button>
                   </div>
 
@@ -522,20 +542,24 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
                       <span className="ml-2">{field.name}</span>
                     </div>
                     <div>
-                      <span className="font-medium text-gray-600">Description:</span>
+                      <span className="font-medium text-gray-600">
+                        Description:
+                      </span>
                       <span className="ml-2">{field.desc}</span>
                     </div>
                     <div>
-                      <span className="font-medium text-gray-600">Quantity:</span>
+                      <span className="font-medium text-gray-600">
+                        Quantity:
+                      </span>
                       <span className="ml-2">{field.quantity}</span>
                     </div>
                     <div>
                       <span className="font-medium text-gray-600">Amount:</span>
-                      <span className="ml-2">${field.amount}</span>
+                      <span className="ml-2">₹{field.amount}</span>
                     </div>
                     <div>
                       <span className="font-medium text-gray-600">Sum:</span>
-                      <span className="ml-2 font-semibold">${field.sum}</span>
+                      <span className="ml-2 font-semibold">₹{field.sum}</span>
                     </div>
                   </div>
                 </div>
@@ -566,13 +590,14 @@ const InvoiceForm = ({ form }: { form: UseFormReturn<InvoiceTypes> }) => {
                     <InvoiceInput
                       type="number"
                       field={field}
-                      onChange={(e) => field.onChange(Number(e.target.value) || 0)}
+                      onChange={(e) =>
+                        field.onChange(Number(e.target.value) || 0)
+                      }
                       placeHolder="Tax"
                     />
                   </div>
                 )}
               />
-             
             </div>
             <Controller
               name="message"

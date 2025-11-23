@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  Document as PDFDocument,
-  Page,
-  Text,
-  View,
-} from "@react-pdf/renderer";
+import { Document as PDFDocument, Page, Text, View } from "@react-pdf/renderer";
 import { InvoiceTypes } from "@/lib/types";
 import { createTw } from "@hyperline/react-pdf-tailwind";
 
@@ -18,7 +13,6 @@ const tw = createTw({
     },
   },
 });
-
 
 export const InvoiceDocument: React.FC<{ data: InvoiceTypes }> = ({ data }) => {
   const subtotal =
@@ -45,7 +39,11 @@ export const InvoiceDocument: React.FC<{ data: InvoiceTypes }> = ({ data }) => {
               {data.sender.phoneNo || "+91 00000 00000"}
             </Text>
           </View>
-          <View style={tw("flex-col text-right text-[9px] text-gray-500 leading-relaxed")}>
+          <View
+            style={tw(
+              "flex-col text-right text-[9px] text-gray-500 leading-relaxed",
+            )}
+          >
             <Text>{data.sender.street || "Business address"}</Text>
             <Text>{data.sender.city || "City, State, IN - 000 000"}</Text>
             <Text>{data.sender.pincode}</Text>
@@ -112,31 +110,54 @@ export const InvoiceDocument: React.FC<{ data: InvoiceTypes }> = ({ data }) => {
           {/* Table */}
           <View style={tw("mt-5")}>
             <View style={tw("flex-row border-b border-gray-200 pb-2 mb-3")}>
-              <Text style={tw("flex-[3] text-[9px] text-gray-500 font-bold uppercase")}>
+              <Text
+                style={tw(
+                  "flex-[3] text-[9px] text-gray-500 font-bold uppercase",
+                )}
+              >
                 ITEM DETAIL
               </Text>
-              <Text style={tw("flex-1 text-[9px] text-gray-500 font-bold uppercase text-center")}>
+              <Text
+                style={tw(
+                  "flex-1 text-[9px] text-gray-500 font-bold uppercase text-center",
+                )}
+              >
                 QTY
               </Text>
-              <Text style={tw("flex-1 text-[9px] text-gray-500 font-bold uppercase text-right")}>
+              <Text
+                style={tw(
+                  "flex-1 text-[9px] text-gray-500 font-bold uppercase text-right",
+                )}
+              >
                 RATE
               </Text>
-              <Text style={tw("flex-1 text-[9px] text-gray-500 font-bold uppercase text-right")}>
+              <Text
+                style={tw(
+                  "flex-1 text-[9px] text-gray-500 font-bold uppercase text-right",
+                )}
+              >
                 AMOUNT
               </Text>
             </View>
 
             {data.items?.map((item, index) => (
-              <View key={index} style={tw("flex-row py-2 border-b border-gray-100")}>
+              <View
+                key={index}
+                style={tw("flex-row py-2 border-b border-gray-100")}
+              >
                 <View style={tw("flex-[3]")}>
-                  <Text style={tw("text-[10px] text-gray-900 font-bold mb-0.5")}>
+                  <Text
+                    style={tw("text-[10px] text-gray-900 font-bold mb-0.5")}
+                  >
                     {item.name || "Item Name"}
                   </Text>
                   <Text style={tw("text-[9px] text-gray-500")}>
                     {item.desc || "Item description"}
                   </Text>
                 </View>
-                <Text style={tw("flex-1 text-[10px] text-gray-900 text-center")}>
+                <Text
+                  style={tw("flex-1 text-[10px] text-gray-900 text-center")}
+                >
                   {item.quantity}
                 </Text>
                 <Text style={tw("flex-1 text-[10px] text-gray-900 text-right")}>
@@ -154,7 +175,7 @@ export const InvoiceDocument: React.FC<{ data: InvoiceTypes }> = ({ data }) => {
             <View style={tw("flex-row justify-between w-[200px] py-1.5")}>
               <Text style={tw("text-[10px] text-gray-500")}>Subtotal</Text>
               <Text style={tw("text-[10px] text-gray-900 text-right")}>
-                ${subtotal.toFixed(2)}
+                ₹{subtotal.toFixed(2)}
               </Text>
             </View>
             <View style={tw("flex-row justify-between w-[200px] py-1.5")}>
@@ -165,10 +186,18 @@ export const InvoiceDocument: React.FC<{ data: InvoiceTypes }> = ({ data }) => {
                 ${taxAmount.toFixed(2)}
               </Text>
             </View>
-            <View style={tw("flex-row justify-between w-[200px] py-2 border-t border-gray-200 mt-1")}>
-              <Text style={tw("text-[11px] text-gray-900 font-bold")}>Total</Text>
-              <Text style={tw("text-[11px] text-gray-900 font-bold text-right")}>
-                ${total.toFixed(2)}
+            <View
+              style={tw(
+                "flex-row justify-between w-[200px] py-2 border-t border-gray-200 mt-1",
+              )}
+            >
+              <Text style={tw("text-[11px] text-gray-900 font-bold")}>
+                Total
+              </Text>
+              <Text
+                style={tw("text-[11px] text-gray-900 font-bold text-right")}
+              >
+                ₹{total.toFixed(2)}
               </Text>
             </View>
           </View>
