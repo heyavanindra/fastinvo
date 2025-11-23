@@ -92,7 +92,7 @@ export const InvoiceDocument: React.FC<{ data: InvoiceTypes }> = ({ data }) => {
             </View>
             <View style={tw("flex-1 items-end")}>
               <Text style={tw("text-[32px] text-orange-500 font-bold mb-5")}>
-                ${total.toFixed(2)}
+                ₹{total.toFixed(2)}
               </Text>
               <Text style={tw("text-[9px] text-gray-500 mb-1")}>
                 Invoice date
