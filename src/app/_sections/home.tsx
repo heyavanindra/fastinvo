@@ -18,8 +18,7 @@ const Hero = ({}) => {
             Generate Invoices Instantly <br /> No Sign-Up, No Hassle.
           </h1>
           <h4 className="max-w-lg font-semibold text-sm md:text-lg max-sm:mt-3 text-center px-2 text-neutral-600 tracking-tight leading-tight dark:text-neutral-500">
-            We empower developers and technical teams to create, simulate, and
-            manage AI-driven workflows visually
+            The simplest way to generate invoices — secure, open source, and easy to use.
           </h4>
           <div>
             <Button
